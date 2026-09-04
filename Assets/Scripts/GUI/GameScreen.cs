@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class GameScreen : Screen
 {
-    public event UnityAction PauseButtonClick;
+   public event UnityAction PauseButtonClick;
 
     public override void Close()
     {
@@ -15,7 +15,7 @@ public class GameScreen : Screen
 
     public override void Open()
     {
-        CanvasGroup.alpha = 1;
+        CanvasGroup.alpha = 1; 
         Button.interactable = true;
     }
 

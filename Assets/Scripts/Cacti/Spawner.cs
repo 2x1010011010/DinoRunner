@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CactiGenerator : ObjectPool
+public class Spawner : ObjectPool
 {
     [SerializeField] private GameObject[] _template;
     [SerializeField] private Vector3 _spawnPoint;
-    [SerializeField] private int _minSecondsBetweenSpawn;
-    [SerializeField] private int _maxSecondsBetweenSpawn;
+    [SerializeField] private float _minSecondsBetweenSpawn;
+    [SerializeField] private float _maxSecondsBetweenSpawn;
 
     private float _elapsedTime;
-    private int _randomTimeBetweenSpawn;
+    private float _randomTimeBetweenSpawn;
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class CactiGenerator : ObjectPool
             {
                 _elapsedTime = 0;
 
-                cactus.transform.position = new Vector3(transform.position.x, _spawnPoint.y, transform.position.z);
+                cactus.transform.position = new Vector3(transform.position.x, cactus.transform.position.y, 0);
                 cactus.SetActive(true);
 
                 _randomTimeBetweenSpawn = Random.Range(_minSecondsBetweenSpawn, _maxSecondsBetweenSpawn);

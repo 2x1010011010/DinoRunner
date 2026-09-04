@@ -11,12 +11,9 @@ public class DinosaurMover : MonoBehaviour
     [SerializeField] private float _startSpeed;
     [SerializeField] private float _speedIncrease;
     [SerializeField] private Score _score;
-    
 
     private Rigidbody2D _rigidbody;
     private float _speed;
-    
-
     private void OnEnable()
     {
         _score.SpeedChanged += OnSpeedChanged;
@@ -38,17 +35,19 @@ public class DinosaurMover : MonoBehaviour
     private void Update()
     {
 
-        if (Time.timeScale == 1 && _rigidbody.velocity.y == 0)
+        if (Time.timeScale == 1 && _rigidbody.linearVelocity.y == 0)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
-                ResetDinosaurMove();
-                _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
-                _jumpSoundEffect.Play();
+
+                    ResetDinosaurMove();
+                    _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
+                    _jumpSoundEffect.Play();
+
             }
         }
 
-        if (_rigidbody.velocity.y != 0)
+        if (_rigidbody.linearVelocity.y != 0)
         { 
             _animation.PlayJumpAnimation();
         }
@@ -67,7 +66,7 @@ public class DinosaurMover : MonoBehaviour
 
     public void ResetDinosaurMove()
     {
-        _rigidbody.velocity = Vector2.zero;
+        _rigidbody.linearVelocity = Vector2.zero;
     }
 
     public void ResetSpeed()

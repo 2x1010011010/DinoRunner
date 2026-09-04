@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour
 {
     [SerializeField] private Dinosaur _dinosaur;
     [SerializeField] private DinosaurMover _dinosaurMover;
     [SerializeField] private GroundMover _groundMover;
-    [SerializeField] private CactiGenerator _cactiGenerator;
+    [SerializeField] private List<Spawner> _spawners;
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private EndScreen _endScreen;
     [SerializeField] private GameScreen _gameScreen;
-   
- 
+
+
     private void OnEnable()
     {
         _startScreen.PlayButtonClick += OnPlayButtonClick;
@@ -42,14 +43,15 @@ public class Game : MonoBehaviour
         _gameScreen.Open();
         StartGame(false);
     }
-
-
-
+    
     private void OnRestartButtonClick()
     {
         _endScreen.Close();
         _gameScreen.Open();
-        _cactiGenerator.ResetPool();
+        
+        foreach(var item in _spawners)
+            item.ResetPool();
+        
         _dinosaurMover.ResetSpeed();
         StartGame(true);
     }

@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class ScoreZone : MonoBehaviour
 {
+    public void Disable()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -13,9 +13,13 @@ public class DinosaurCollisionHandler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out ScoreZone scoreZone))
-        
+        {
             _dinosaur.IncreaseScore();
+            scoreZone.Disable();
+        }
         else
+        {
             _dinosaur.Die();
+        }
     }
 }
