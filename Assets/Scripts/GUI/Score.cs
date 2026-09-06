@@ -2,50 +2,31 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace GUI
 {
-    public class Score : MonoBehaviour
-    {
-        [SerializeField] private Dinosaur.Dinosaur _dinosaur;
-        [SerializeField] private DinosaurMover _dinosaurMover;
-        [SerializeField] private TMP_Text _score;
-        [SerializeField] private BackgroundChanger _backgroundChanger;
-        [SerializeField] private TMP_Text _maxScore;
-        [SerializeField] private int _backChangeScore;
+  public class Score : MonoBehaviour
+  {
+    [SerializeField] private Player _player;
 
-        private int _lastRecordScore;
-        private int _currentScore;
-        public event UnityAction SpeedChanged;
+    private int _lastRecordScore;
+    private int _currentScore;
+    public event UnityAction SpeedChanged;
 
-        public int Record => _lastRecordScore;
-        public int CurrentScore => _currentScore;
-    
-        private void OnEnable()
-        {
-            _dinosaur.ScoreChanged += OnScoreChanged;
-        }
+    public int Record => _lastRecordScore;
+    public int CurrentScore => _currentScore;
 
-        private void OnDisable()
-        {
-            _dinosaur.ScoreChanged -= OnScoreChanged;
-        }
+    public void SetRecord(int score) => 
+      _lastRecordScore = score;
 
-        private void OnScoreChanged(int score)
-        {
-            _score.text = score.ToString();
-            _currentScore = score;
-        
-            if (score > _lastRecordScore)
-            {
-                _maxScore.text = score.ToString();
-                _lastRecordScore = score;
-            }
+    private void OnEnable() => 
+      _player.ScoreChanged += OnScoreChanged;
 
-            if (score % _backChangeScore == 0)
-            {
-                _backgroundChanger.ChangeBackground();
-            }
-        }
-    }
+    private void OnDisable() => 
+      _player.ScoreChanged -= OnScoreChanged;
+
+    private void OnScoreChanged(int score) => 
+      _currentScore = score;
+  }
 }

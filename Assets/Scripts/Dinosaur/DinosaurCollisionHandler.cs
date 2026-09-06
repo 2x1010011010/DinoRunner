@@ -3,26 +3,26 @@ using UnityEngine;
 
 namespace Dinosaur
 {
-    [RequireComponent(typeof(global::Dinosaur.Dinosaur))]
+    [RequireComponent(typeof(global::Dinosaur.Player))]
     public class DinosaurCollisionHandler : MonoBehaviour
     {
-        private global::Dinosaur.Dinosaur _dinosaur;
+        private global::Dinosaur.Player _player;
 
         private void Start()
         {
-            _dinosaur = GetComponent<global::Dinosaur.Dinosaur>();
+            _player = GetComponent<global::Dinosaur.Player>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.TryGetComponent(out ScoreZone scoreZone))
             {
-                _dinosaur.IncreaseScore();
+                _player.IncreaseScore();
                 scoreZone.Disable();
             }
             else
             {
-                _dinosaur.Die();
+                _player.Die();
             }
         }
     }

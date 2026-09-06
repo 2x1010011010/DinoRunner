@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DinosaurTracker : MonoBehaviour
 {
-    [SerializeField] private Dinosaur.Dinosaur _target;
+    [SerializeField] private Dinosaur.Player _target;
     [SerializeField] private float _offsetX;
 
     private void Update()

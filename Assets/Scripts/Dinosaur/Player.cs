@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Dinosaur
 {
-    public class Dinosaur : MonoBehaviour
+    public class Player : MonoBehaviour
     {
         private int _score;
 

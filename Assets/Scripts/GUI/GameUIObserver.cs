@@ -1,6 +1,5 @@
 using GUI.Screens;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace GUI
 {
@@ -20,30 +19,59 @@ namespace GUI
     [SerializeField] private GameObject _startScreenObject;
     [SerializeField] private GameObject _settingsScreenObject;
 
-    private void Awake()
-    {
-      _startScreenObject.SetActive(true);
-      _startScreen.Open();
-    }
+    private void Awake() => 
+      OpenStartScreen();
 
     private void OpenStartScreen()
     {
       _startScreenObject.SetActive(true);
       _startScreen.Open();
       _startScreen.OnStart += StartGame;
-      _startScreen.OnSettingsShow += ShowSettings;
+      _startScreen.OnSettingsShow += OpenSettingsScreen;
+    }
+
+    private void CloseStartScreen()
+    {
+      _startScreen.Close();
+      _startScreen.OnStart -= CloseStartScreen;
+      _startScreen.OnSettingsShow -= OpenSettingsScreen;
+      _startScreenObject.SetActive(false);
     }
 
     private void StartGame()
     {
-      
+      CloseStartScreen();
+      OpenGameScreen();
     }
 
-    private void ShowSettings()
+    private void OpenSettingsScreen()
     {
-      _startScreenObject.SetActive(false);
+      CloseStartScreen();
       _settingsScreenObject.SetActive(true);
       _settingsScreen.Open();
+      _settingsScreen.OnSettingsClose += CloseSettingsScreen;
+    }
+
+    private void CloseSettingsScreen()
+    {
+      _settingsScreen.OnSettingsClose -= CloseSettingsScreen;
+      OpenStartScreen();
+    }
+
+    private void OpenGameScreen()
+    {
+    }
+
+    private void CloseGameScreen()
+    {
+    }
+
+    private void OpenGameOverScreen()
+    {
+    }
+
+    private void CloseGameOverScreen()
+    {
     }
   }
 }
