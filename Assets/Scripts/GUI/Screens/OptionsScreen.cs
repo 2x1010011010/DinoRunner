@@ -1,11 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 
-public class OptionsScreen : Screen
+namespace GUI.Screens
 {
-    public event UnityAction BackButtonClick;
+  public class OptionsScreen : Screen
+  {
+    public override void Open()
+    {
+      throw new System.NotImplementedException();
+    }
 
-  
+    public override void Close()
+    {
+      throw new System.NotImplementedException();
+    }
+  }
 }

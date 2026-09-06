@@ -1,9 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using GUI;
-using UnityEngine;
+﻿using System;
 
-public class BackButton : ButtonBase
+namespace GUI.Buttons
 {
-
+  public class BackButton : ButtonBase
+  {
+    public event Action OnBackButtonClick; 
+  
+    protected override void ButtonClick()
+    {
+      OnBackButtonClick?.Invoke();
+    }
+  }
 }

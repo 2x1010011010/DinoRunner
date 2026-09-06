@@ -1,17 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
 
-public class SettingsButton : MonoBehaviour
+namespace GUI.Buttons
 {
-    [SerializeField] private GameObject _settingsCanvas;
-    [SerializeField] private GameObject _mainCanvas;
-    [SerializeField] private StartScreen _startScreen;
-    public void OnButtonClick()
+  public class SettingsButton : ButtonBase
+  {
+    public event Action OnSettingsButtonClick;
+
+    protected override void ButtonClick()
     {
-        _startScreen.Close();
-        _mainCanvas.SetActive(false);
-        _settingsCanvas.SetActive(true);
+      OnSettingsButtonClick?.Invoke();
     }
+  }
 }

@@ -1,57 +1,59 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+namespace Cacti
 {
-    [SerializeField] private GameObject _container;
-    [SerializeField] private int _capacity;
-
-    private Camera _camera;
-    private List<GameObject> _pool = new List<GameObject>();
-
-    protected void Initialize(GameObject[] prefab)
+    public class ObjectPool : MonoBehaviour
     {
-        _camera = Camera.main;
+        [SerializeField] private GameObject _container;
+        [SerializeField] private int _capacity;
 
-        for (int i = 0; i < _capacity; i++)
+        private Camera _camera;
+        private List<GameObject> _pool = new List<GameObject>();
+
+        protected void Initialize(GameObject[] prefab)
         {
-            int randomIndex = Random.Range(0, prefab.Length);
-            GameObject spawned = Instantiate(prefab[randomIndex], _container.transform);
-            spawned.SetActive(false);
+            _camera = Camera.main;
 
-            _pool.Add(spawned);
-        }
-    }
-
-    protected bool TryGetObject(out GameObject result)
-    {
-        result = _pool.FirstOrDefault(p => p.activeSelf == false);
-
-        return result != null;
-    }
-
-    protected void DisableObjectAbroadCamera()
-    {
-        foreach (var item in _pool)
-        {
-            if (item.activeSelf == true)
+            for (int i = 0; i < _capacity; i++)
             {
-                Vector3 point = _camera.WorldToViewportPoint(item.transform.position);
-                if (point.x < -5)
+                int randomIndex = Random.Range(0, prefab.Length);
+                GameObject spawned = Instantiate(prefab[randomIndex], _container.transform);
+                spawned.SetActive(false);
+
+                _pool.Add(spawned);
+            }
+        }
+
+        protected bool TryGetObject(out GameObject result)
+        {
+            result = _pool.FirstOrDefault(p => p.activeSelf == false);
+
+            return result != null;
+        }
+
+        protected void DisableObjectAbroadCamera()
+        {
+            foreach (var item in _pool)
+            {
+                if (item.activeSelf == true)
                 {
-                    item.SetActive(false);
+                    Vector3 point = _camera.WorldToViewportPoint(item.transform.position);
+                    if (point.x < -5)
+                    {
+                        item.SetActive(false);
+                    }
                 }
             }
         }
-    }
 
-    public void ResetPool()
-    {
-        foreach (var item in _pool)
+        public void ResetPool()
         {
-            item.SetActive(false);
+            foreach (var item in _pool)
+            {
+                item.SetActive(false);
+            }
         }
     }
 }

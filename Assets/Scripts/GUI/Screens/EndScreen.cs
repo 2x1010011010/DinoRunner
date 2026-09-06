@@ -1,10 +1,22 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
-using TMPro;
+﻿using TMPro;
+using UnityEngine;
 
-public class EndScreen : Screen
+namespace GUI.Screens
 {
+  public class EndScreen : Screen
+  {
     [SerializeField] private Score _score;
     [SerializeField] private TMP_Text _scoreText;
-    public event UnityAction RestartButtonClick;
+    [SerializeField] private TMP_Text _recordScoreText;
+
+    public override void Open()
+    {
+      _scoreText.text = _score.CurrentScore.ToString();
+      _recordScoreText.text = _score.Record.ToString();
+    }
+
+    public override void Close()
+    {
+    }
+  }
 }

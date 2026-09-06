@@ -1,37 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Spawner : ObjectPool
+namespace Cacti
 {
-    [SerializeField] private GameObject[] _template;
-    [SerializeField] private Vector3 _spawnPoint;
-    [SerializeField] private float _minSecondsBetweenSpawn;
-    [SerializeField] private float _maxSecondsBetweenSpawn;
-
-    private float _elapsedTime;
-    private float _randomTimeBetweenSpawn;
-
-    private void Start()
+    public class Spawner : ObjectPool
     {
-        Initialize(_template);
-        _randomTimeBetweenSpawn = _maxSecondsBetweenSpawn;
-    }
+        [SerializeField] private GameObject[] _template;
+        [SerializeField] private Vector3 _spawnPoint;
+        [SerializeField] private float _minSecondsBetweenSpawn;
+        [SerializeField] private float _maxSecondsBetweenSpawn;
 
-    private void Update()
-    {
-        _elapsedTime += Time.deltaTime;
-        if (_elapsedTime >= _randomTimeBetweenSpawn)
+        private float _elapsedTime;
+        private float _randomTimeBetweenSpawn;
+
+        private void Start()
         {
-            if (TryGetObject(out GameObject cactus))
+            Initialize(_template);
+            _randomTimeBetweenSpawn = _maxSecondsBetweenSpawn;
+        }
+
+        private void Update()
+        {
+            _elapsedTime += Time.deltaTime;
+            if (_elapsedTime >= _randomTimeBetweenSpawn)
             {
-                _elapsedTime = 0;
+                if (TryGetObject(out GameObject cactus))
+                {
+                    _elapsedTime = 0;
 
-                cactus.transform.position = new Vector3(transform.position.x, cactus.transform.position.y, 0);
-                cactus.SetActive(true);
+                    cactus.transform.position = new Vector3(transform.position.x, cactus.transform.position.y, 0);
+                    cactus.SetActive(true);
 
-                _randomTimeBetweenSpawn = Random.Range(_minSecondsBetweenSpawn, _maxSecondsBetweenSpawn);
-                DisableObjectAbroadCamera();
+                    _randomTimeBetweenSpawn = Random.Range(_minSecondsBetweenSpawn, _maxSecondsBetweenSpawn);
+                    DisableObjectAbroadCamera();
+                }
             }
         }
     }

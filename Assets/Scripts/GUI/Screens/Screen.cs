@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
-public class Screen : MonoBehaviour
+namespace GUI.Screens
 {
-    public void Open()
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void Close()
-    {
-        gameObject.SetActive(false);
-    }
+  public abstract class Screen : MonoBehaviour
+  {
+    public abstract void Open();
+    public abstract void Close();
+  }
 }

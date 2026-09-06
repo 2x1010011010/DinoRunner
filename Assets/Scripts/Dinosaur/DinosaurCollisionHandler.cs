@@ -1,25 +1,29 @@
-﻿using UnityEngine;
+﻿using Cacti;
+using UnityEngine;
 
-[RequireComponent(typeof(Dinosaur))]
-public class DinosaurCollisionHandler : MonoBehaviour
+namespace Dinosaur
 {
-    private Dinosaur _dinosaur;
-
-    private void Start()
+    [RequireComponent(typeof(global::Dinosaur.Dinosaur))]
+    public class DinosaurCollisionHandler : MonoBehaviour
     {
-        _dinosaur = GetComponent<Dinosaur>();
-    }
+        private global::Dinosaur.Dinosaur _dinosaur;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out ScoreZone scoreZone))
+        private void Start()
         {
-            _dinosaur.IncreaseScore();
-            scoreZone.Disable();
+            _dinosaur = GetComponent<global::Dinosaur.Dinosaur>();
         }
-        else
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            _dinosaur.Die();
+            if (collision.TryGetComponent(out ScoreZone scoreZone))
+            {
+                _dinosaur.IncreaseScore();
+                scoreZone.Disable();
+            }
+            else
+            {
+                _dinosaur.Die();
+            }
         }
     }
 }

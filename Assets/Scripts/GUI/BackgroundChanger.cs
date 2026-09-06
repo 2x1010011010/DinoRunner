@@ -1,26 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundChanger : MonoBehaviour
+namespace GUI
 {
-    [SerializeField] private SpriteRenderer _background;
-    [SerializeField] private List<Sprite> _sprites;
-
-    private int _counter;
-    private void Start()
+    public class BackgroundChanger : MonoBehaviour
     {
-        _background.sprite = _sprites[0];
-        _counter = 0;
-    }
+        [SerializeField] private SpriteRenderer _background;
+        [SerializeField] private List<Sprite> _sprites;
 
-    public void ChangeBackground()
-    {
-        if (_counter == _sprites.Count - 1)
+        private int _counter;
+        private void Start()
         {
-            _counter = -1;
+            _background.sprite = _sprites[0];
+            _counter = 0;
         }
-        _counter++;
-        _background.sprite = _sprites[_counter];
+
+        public void ChangeBackground()
+        {
+            if (_counter == _sprites.Count - 1)
+            {
+                _counter = -1;
+            }
+            _counter++;
+            _background.sprite = _sprites[_counter];
+        }
     }
 }
