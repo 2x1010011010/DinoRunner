@@ -1,27 +1,18 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/staging' branch; Version is '6000.3.9f1 (7a9955a4f2fa) revision 8034645'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user" at "2026-09-06T10:16:51.0820765Z"
 OS: 'Windows 11  (10.0.26200) Professional' Language: 'en' Physical Memory: 32472 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user" at "2026-09-04T15:09:06.4106559Z"
 Process architecture: x64
-Date: 2026-09-04T15:09:06Z
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 20664, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
-[Licensing::Module] LicensingClient has failed validation; ignoring
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.18.3+d7ffd15
-  Session Id:              52612c1f9eb544e9bd1a7b8638bbfe92
-  Correlation Id:          9e5f7e2c15f50130085da6d1abaefce6
-  External correlation Id: 8270741864058619084
-  Machine Id:              VGd80PZ9QyCw0HDVca4dGQUCKdA=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-user" (connect: 0.00s, validation: 0.00s, handshake: 0.06s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user-notifications" at "2026-09-04T15:09:06.4760597Z"
-[Licensing::Module] Licensing Background thread has ended after 0.07s
+Date: 2026-09-06T10:16:51Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 29352, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.9f1\Editor\Unity.exe
 -adb2
 -batchMode
+[Licensing::Module] LicensingClient has failed validation; ignoring
 -noUpm
 -name
 AssetImportWorker4
@@ -30,7 +21,7 @@ D:/UnityProjects/DinoRunner
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-63940
+55230
 -licensingIpc
 LicenseClient-user
 -job-worker-count
@@ -78,12 +69,21 @@ D:/UnityProjects/DinoRunner
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [27552]  Target information:
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              4ba7d9e3f80b47fcbbf61b8d332993be
+  Correlation Id:          7b83416e857afe5a3eb153c62d44caf2
+  External correlation Id: 257488341281993619
+  Machine Id:              VGd80PZ9QyCw0HDVca4dGQUCKdA=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-user" (connect: 0.00s, validation: 0.00s, handshake: 0.20s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user-notifications" at "2026-09-06T10:16:51.2903853Z"
+[Licensing::Module] Licensing Background thread has ended after 0.21s
+Player connection [16924]  Target information:
 
-Player connection [27552]  * "[IP] 192.168.1.102 [Port] 0 [Flags] 2 [Guid] 4079524978 [EditorId] 4079524978 [Version] 1048832 [Id] WindowsEditor(7,fa1010011010LT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [16924]  * "[IP] 192.168.1.102 [Port] 0 [Flags] 2 [Guid] 3897461457 [EditorId] 3897461457 [Version] 1048832 [Id] WindowsEditor(7,fa1010011010LT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [27552] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [27552] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [16924] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [16924] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -95,7 +95,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 2.38 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 144.54 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.9f1 (7a9955a4f2fa)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -111,7 +111,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56844
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56300
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
@@ -128,48 +128,48 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/E
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 [Licensing::Client] Successfully resolved entitlement details
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.012267 seconds.
-- Loaded All Assemblies, in  0.381 seconds
+Registered in 0.014585 seconds.
+- Loaded All Assemblies, in  1.029 seconds
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 229 ms
+Android Extension - Scanning For ADB Devices 246 ms
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.715 seconds
-Domain Reload Profiling: 1094ms
-	BeginReloadAssembly (93ms)
+- Finished resetting the current domain, in  0.779 seconds
+Domain Reload Profiling: 1806ms
+	BeginReloadAssembly (89ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (57ms)
-	LoadAllAssembliesAndSetupDomain (181ms)
-		LoadAssemblies (92ms)
+	RebuildCommonClasses (153ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (714ms)
+		LoadAssemblies (88ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (176ms)
-			TypeCache.Refresh (175ms)
-				TypeCache.ScanAssembly (161ms)
+		AnalyzeDomain (709ms)
+			TypeCache.Refresh (707ms)
+				TypeCache.ScanAssembly (512ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (715ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (779ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (678ms)
+		SetupLoadedEditorAssemblies (746ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (346ms)
+			InitializePlatformSupportModulesInManaged (426ms)
 			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (92ms)
-			ProcessInitializeOnLoadAttributes (161ms)
-			ProcessInitializeOnLoadMethodAttributes (73ms)
+			BeforeProcessingInitializeOnLoad (87ms)
+			ProcessInitializeOnLoadAttributes (159ms)
+			ProcessInitializeOnLoadMethodAttributes (68ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -179,8 +179,8 @@ Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
-- Loaded All Assemblies, in  0.595 seconds
-Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.622 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for UWP target not found
@@ -193,46 +193,190 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.746 seconds
-Domain Reload Profiling: 1339ms
-	BeginReloadAssembly (154ms)
+- Finished resetting the current domain, in  0.679 seconds
+Domain Reload Profiling: 1298ms
+	BeginReloadAssembly (168ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (34ms)
-	LoadAllAssembliesAndSetupDomain (356ms)
-		LoadAssemblies (286ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (345ms)
+		LoadAssemblies (295ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (141ms)
-			TypeCache.Refresh (110ms)
-				TypeCache.ScanAssembly (95ms)
-			BuildScriptInfoCaches (26ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (747ms)
+		AnalyzeDomain (136ms)
+			TypeCache.Refresh (107ms)
+				TypeCache.ScanAssembly (94ms)
+			BuildScriptInfoCaches (22ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (679ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (640ms)
+		SetupLoadedEditorAssemblies (565ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (12ms)
+			InitializePlatformSupportModulesInManaged (11ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (190ms)
-			ProcessInitializeOnLoadAttributes (376ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			BeforeProcessingInitializeOnLoad (148ms)
+			ProcessInitializeOnLoadAttributes (325ms)
+			ProcessInitializeOnLoadMethodAttributes (71ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2935 unused Assets / (0.9 MB). Loaded Objects now: 3541.
-Memory consumption went from 91.0 MB to 90.1 MB.
-Total: 7.349600 ms (FindLiveObjects: 0.365000 ms CreateObjectMapping: 0.255400 ms MarkObjects: 5.640700 ms  DeleteObjects: 1.087300 ms)
+Unloading 2938 unused Assets / (0.8 MB). Loaded Objects now: 3544.
+Memory consumption went from 93.1 MB to 92.3 MB.
+Total: 6.356000 ms (FindLiveObjects: 0.459400 ms CreateObjectMapping: 0.222500 ms MarkObjects: 4.777600 ms  DeleteObjects: 0.894700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 735621.423554 seconds.
+  path: Assets/TWD/FreeButtonSet/Textures/icons/256x256/play.png
+  artifactKey: Guid(c398922a20f2f984db55718ac2c394f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TWD/FreeButtonSet/Textures/icons/256x256/play.png using Guid(c398922a20f2f984db55718ac2c394f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5494614be4f09134b35805fc7e925b5c') in 0.0912993 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_06.png
+  artifactKey: Guid(80be61147040e8946b56ed8d22431fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_06.png using Guid(80be61147040e8946b56ed8d22431fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '794825ba3de6a52dbdb978a152a1878e') in 0.0210943 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_08.png
+  artifactKey: Guid(a463f25f8eda2eb4bb69591f3bfb7cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_08.png using Guid(a463f25f8eda2eb4bb69591f3bfb7cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1d7a23f79f70df05be9d21a1ac97ce4e') in 0.0193157 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002894 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_12.png
+  artifactKey: Guid(4a91e664936a78a459fe7ef1f583d410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_12.png using Guid(4a91e664936a78a459fe7ef1f583d410) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c910dbe8c6ded3a9416a94ced3b351ec') in 0.0228291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.152597 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_14.png
+  artifactKey: Guid(983c0b85730e58843b6e39ad11eaaf77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_14.png using Guid(983c0b85730e58843b6e39ad11eaaf77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8216c624d2c81cc0056ea9466f437362') in 0.0172344 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006167 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_18.png
+  artifactKey: Guid(b034e5cdbe319874f9821871cfaa7aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_18.png using Guid(b034e5cdbe319874f9821871cfaa7aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b21fa1d872cc4d4ca94257b426834b37') in 0.019259 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003546 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_22.png
+  artifactKey: Guid(421fd0b31c77eab4da10a12c93dee111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_22.png using Guid(421fd0b31c77eab4da10a12c93dee111) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '29f5dbaf351a064194e6d721f9cd9dda') in 0.019145 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000136 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_24.png
+  artifactKey: Guid(155a2098fd224f14b8aed75b7da65c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_24.png using Guid(155a2098fd224f14b8aed75b7da65c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4c9b48cf449cbe303d9db6bd85ee562a') in 0.0166757 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001497 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_27.png
+  artifactKey: Guid(fdf48f6644801264abbde301da9fa357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_27.png using Guid(fdf48f6644801264abbde301da9fa357) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c06af6a84c98b62a5ec882d44831ccb0') in 0.0168469 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001817 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_30.png
+  artifactKey: Guid(989e3d09337f2384db7afa91ce16a789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_30.png using Guid(989e3d09337f2384db7afa91ce16a789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '631296e30142f9f04164333deb429820') in 0.0174149 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002088 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_33.png
+  artifactKey: Guid(58aa4944cb5c87a4f9573735013dd3ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_33.png using Guid(58aa4944cb5c87a4f9573735013dd3ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2c7eca6ed0a125a46d0f4614ed1e5bb') in 0.0210719 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.466390 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_34.png
+  artifactKey: Guid(84f41e16d6539d541876fee64316a0ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_34.png using Guid(84f41e16d6539d541876fee64316a0ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b56ccbf7a933d84e7d47d8cd27953503') in 0.0176356 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_37.png
+  artifactKey: Guid(f9cc1d6ebd1584d44bddd9119e20dac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_37.png using Guid(f9cc1d6ebd1584d44bddd9119e20dac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b1f6f56001af9cc07ec5f49e983f9488') in 0.0199194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003967 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_41.png
+  artifactKey: Guid(8b3ee01120cc1f943af44e6a35e0e982) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_41.png using Guid(8b3ee01120cc1f943af44e6a35e0e982) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '641c947d742bdf262ef58e7e9f7d887f') in 0.0181328 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008903 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_44.png
+  artifactKey: Guid(1eca419e6c84d6544a2dcad138bf8729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_44.png using Guid(1eca419e6c84d6544a2dcad138bf8729) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab3c4d3ae508a9fedf3bc92f7a229a0e') in 0.0170044 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001297 seconds.
+  path: Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_47.png
+  artifactKey: Guid(e4e9591b369f35a49ba2d533b7231cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_idle/rix_cut-idle_47.png using Guid(e4e9591b369f35a49ba2d533b7231cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd7febd2f789475e0a5ada9f4f0132a55') in 0.017541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.237844 seconds.
+  path: Assets/Sprites/RIX/animation/rix_jump_up_run/rix_cut-jump_start_run_0.png
+  artifactKey: Guid(1aeba5df71949e7478bbfc4752974dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_jump_up_run/rix_cut-jump_start_run_0.png using Guid(1aeba5df71949e7478bbfc4752974dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd384de09cc13cf664b1687850b1e598f') in 0.023464 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002601 seconds.
+  path: Assets/Sprites/RIX/animation/rix_jump_end_run/rix_cut-jump_start_run_2.png
+  artifactKey: Guid(474a290d866239243a73cdd3aa99e792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RIX/animation/rix_jump_end_run/rix_cut-jump_start_run_2.png using Guid(474a290d866239243a73cdd3aa99e792) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8e9aea52f5c3a11923c6d02fd54ddae9') in 0.0183306 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

@@ -55,23 +55,32 @@ namespace GUI
     private void CloseSettingsScreen()
     {
       _settingsScreen.OnSettingsClose -= CloseSettingsScreen;
+      _settingsScreenObject.SetActive(false);
       OpenStartScreen();
     }
 
     private void OpenGameScreen()
     {
+      _gameScreenObject.SetActive(true);
+      _gameScreen.Open();
     }
 
     private void CloseGameScreen()
     {
+      _gameScreen.Close();
+      _gameScreenObject.SetActive(false);
     }
 
     private void OpenGameOverScreen()
     {
+      _gameScreenObject.SetActive(true);
+      _gameScreen.Open();
     }
 
     private void CloseGameOverScreen()
     {
+      _gameScreen.Close();
+      _gameScreenObject.SetActive(false);
     }
   }
 }

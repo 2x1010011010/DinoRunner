@@ -1,5 +1,6 @@
 ﻿using System;
 using GUI.Buttons;
+using GUI.Sliders;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,9 @@ namespace GUI.Screens
     public event Action OnSettingsClose;
     
     [SerializeField] private BackButton _backButton;
+    [SerializeField] private Slider _soundSlider;
+    [SerializeField] private Slider _musicSlider;
+    [SerializeField] private Slider _fxSlider;
     
     public override void Open()
     {
