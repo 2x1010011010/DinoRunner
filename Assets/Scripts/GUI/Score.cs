@@ -19,6 +19,9 @@ namespace GUI
 
     public void SetRecord(int score) => 
       _lastRecordScore = score;
+    
+    public void Clear() => 
+      _currentScore = 0;
 
     private void OnEnable() => 
       _player.ScoreChanged += OnScoreChanged;

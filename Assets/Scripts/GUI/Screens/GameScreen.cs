@@ -19,7 +19,8 @@ namespace GUI.Screens
     public override void Open()
     {
       _scoreText.text = "0";
-      
+      _score.Clear();
+      Time.timeScale = 1;
     }
 
     public override void Close()
