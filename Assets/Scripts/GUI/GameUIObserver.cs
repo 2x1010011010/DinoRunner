@@ -71,7 +71,7 @@ namespace GUI
       _gameScreenObject.SetActive(false);
     }
 
-    private void OpenGameOverScreen()
+    public void OpenGameOverScreen()
     {
       _gameScreenObject.SetActive(true);
       _gameScreen.Open();
