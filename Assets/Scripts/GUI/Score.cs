@@ -12,14 +12,19 @@ namespace GUI
 
     private int _lastRecordScore;
     private int _currentScore;
-    public event UnityAction SpeedChanged;
 
     public int Record => _lastRecordScore;
     public int CurrentScore => _currentScore;
 
-    public void SetRecord(int score) => 
-      _lastRecordScore = score;
-    
+    public void SetRecord()
+    {
+      if (_currentScore > _lastRecordScore)
+      {
+        _lastRecordScore = _currentScore;
+        PlayerPrefs.SetInt("Record", _lastRecordScore);
+      }
+    }
+
     public void Clear() => 
       _currentScore = 0;
 
@@ -29,7 +34,7 @@ namespace GUI
     private void OnDisable() => 
       _player.ScoreChanged -= OnScoreChanged;
 
-    private void OnScoreChanged(int score) => 
-      _currentScore = score;
+    private void OnScoreChanged() => 
+      _currentScore++;
   }
 }

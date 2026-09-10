@@ -5,23 +5,17 @@ namespace Dinosaur
 {
     public class Player : MonoBehaviour
     {
-        private int _score;
-
-        public int Score => _score;
-
         public event UnityAction GameOver;
-        public event UnityAction<int> ScoreChanged;
+        public event UnityAction ScoreChanged;
 
         public void IncreaseScore()
         {
-            _score++;
-            ScoreChanged?.Invoke(_score);
+            ScoreChanged?.Invoke();
         }
 
         public void ResetPlayer()
         {
-            _score = 0;
-            ScoreChanged?.Invoke(_score);
+            ScoreChanged?.Invoke();
         }
 
         public void Die()

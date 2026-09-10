@@ -2,7 +2,6 @@
 using GUI.Buttons;
 using GUI.Sliders;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace GUI.Screens
 {

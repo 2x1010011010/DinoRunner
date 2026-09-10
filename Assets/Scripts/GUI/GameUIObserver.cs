@@ -18,11 +18,9 @@ namespace GUI
     [SerializeField] private GameObject _endScreenObject;
     [SerializeField] private GameObject _startScreenObject;
     [SerializeField] private GameObject _settingsScreenObject;
+    
 
-    private void Awake() => 
-      OpenStartScreen();
-
-    private void OpenStartScreen()
+    public void OpenStartScreen()
     {
       _startScreenObject.SetActive(true);
       _startScreen.Open();
