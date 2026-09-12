@@ -15,7 +15,6 @@ namespace Dinosaur
 
         public void ResetPlayer()
         {
-            ScoreChanged?.Invoke();
         }
 
         public void Die()
