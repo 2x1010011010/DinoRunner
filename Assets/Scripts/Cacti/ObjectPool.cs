@@ -38,19 +38,28 @@ namespace Cacti
     {
       foreach (var item in _pool)
       {
-        if (!item.activeSelf) return;
+        if (!item.activeSelf) continue;
+
         if (item.transform.position.x < _leftBorder)
-            item.SetActive(false);
+          item.SetActive(false);
       }
     }
 
+    protected void SetActiveObjectsSpeed(float speed)
+    {
+      foreach (var item in _pool)
+      {
+        if (!item.activeSelf) continue;
+
+        if (item.TryGetComponent(out CactusMover cactus))
+          cactus.SetSpeed(speed);
+      }
+    }
 
     public void ResetPool()
     {
       foreach (var item in _pool)
-      {
         item.SetActive(false);
-      }
     }
   }
 }

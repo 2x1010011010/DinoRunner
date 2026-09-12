@@ -9,12 +9,16 @@ namespace GUI.Screens
 
     public override void Open()
     {
-      _scoreText.text = "0";
+      SetScore(0);
+    }
+
+    public void SetScore(int score)
+    {
+      _scoreText.text = score.ToString();
     }
 
     public override void Close()
     {
-      
     }
   }
 }

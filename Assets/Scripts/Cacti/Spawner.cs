@@ -12,9 +12,12 @@ namespace Cacti
     private float _elapsedTime;
     private float _randomTimeBetweenSpawn;
     private float _speed = 5f;
-    
-    public void SetSpeed(float speed) => 
+
+    public void SetSpeed(float speed)
+    {
       _speed = speed;
+      SetActiveObjectsSpeed(speed);
+    }
 
     private void Start()
     {
@@ -39,6 +42,12 @@ namespace Cacti
           DisableObjectAbroadCamera();
         }
       }
+    }
+
+    public void ResetSpawner()
+    {
+      _elapsedTime = 0f;
+      _randomTimeBetweenSpawn = _maxSecondsBetweenSpawn;
     }
   }
 }

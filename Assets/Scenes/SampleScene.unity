@@ -331,9 +331,6 @@ MonoBehaviour:
   _jumpForce: 550
   _animation: {fileID: 9045610}
   _jumpSoundEffect: {fileID: 1098649511}
-  _startSpeed: 5
-  _speedIncrease: 0.25
-  _score: {fileID: 901993621}
 --- !u!50 &9045606
 Rigidbody2D:
   serializedVersion: 5
@@ -821,6 +818,7 @@ MonoBehaviour:
   _score: {fileID: 901993621}
   _scoreText: {fileID: 889771175}
   _recordScoreText: {fileID: 1375180213}
+  _restartButton: {fileID: 0}
 --- !u!1 &105235246
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cff09388a24e43a98e383ae9466f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GUI.GameUIObserver
-  _game: {fileID: 519420030}
   _gameScreen: {fileID: 1026036194}
   _endScreen: {fileID: 102199163}
   _startScreen: {fileID: 1077096071}
@@ -1774,10 +1771,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2dc1cad967489c42b75ae4d7d6e59e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9045607}
-  _dinosaurMover: {fileID: 9045605}
-  _groundMover: {fileID: 0}
-  _spawners: []
+  _player: {fileID: 9045607}
+  _gameUIObserver: {fileID: 108088633}
+  _score: {fileID: 901993621}
+  _spawner: {fileID: 720049568}
+  _parallax: {fileID: 871895548}
+  _startSpeed: 5
+  _speedDelta: 1
+  _scoreForSpeedIncrease: 50
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3724,7 +3725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae5ec001735c904fb21ea9caad89f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GUI.Score
-  _player: {fileID: 9045607}
 --- !u!4 &901993622
 Transform:
   m_ObjectHideFlags: 0
@@ -4020,7 +4020,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GUI.Screens.GameScreen
   _scoreText: {fileID: 1849801153}
-  _score: {fileID: 901993621}
 --- !u!1 &1031704210
 GameObject:
   m_ObjectHideFlags: 0
