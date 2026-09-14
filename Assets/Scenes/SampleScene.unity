@@ -818,7 +818,7 @@ MonoBehaviour:
   _score: {fileID: 901993621}
   _scoreText: {fileID: 889771175}
   _recordScoreText: {fileID: 1375180213}
-  _restartButton: {fileID: 0}
+  _restartButton: {fileID: 2099728767}
 --- !u!1 &105235246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,7 +1743,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1778,7 +1777,7 @@ MonoBehaviour:
   _parallax: {fileID: 871895548}
   _startSpeed: 5
   _speedDelta: 1
-  _scoreForSpeedIncrease: 50
+  _scoreForSpeedIncrease: 10
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1845,20 +1844,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c49b552da062f34e8a3e09354c14409, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 9045607}
-  _offsetX: 5
 --- !u!1 &523916143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,7 +3380,8 @@ MonoBehaviour:
     - {fileID: 1202603351}
     - {fileID: 1532851516}
     _sortingOrder: -1
-    _speed: 1.5
+    _speed: 5
+    _speedMultiplier: 0.3
     _borderCoordinate: -35
     _shiftDistance: 85.04
   - _spriteRenderers:
@@ -3403,13 +3389,15 @@ MonoBehaviour:
     - {fileID: 1243391303}
     - {fileID: 1778483351}
     _sortingOrder: -2
-    _speed: 0.8
+    _speed: 1.5
+    _speedMultiplier: 0.53
     _borderCoordinate: -35
     _shiftDistance: 84.5
   - _spriteRenderers:
     - {fileID: 1031704212}
     _sortingOrder: -3
-    _speed: 0.2
+    _speed: 0.02
+    _speedMultiplier: 0.013
     _borderCoordinate: -35
     _shiftDistance: 25
   - _spriteRenderers:
@@ -3418,6 +3406,7 @@ MonoBehaviour:
     - {fileID: 742966260}
     _sortingOrder: -3
     _speed: 5
+    _speedMultiplier: 1
     _borderCoordinate: -35
     _shiftDistance: 44
 --- !u!1 &884027473
@@ -7223,6 +7212,7 @@ GameObject:
   - component: {fileID: 2099728766}
   - component: {fileID: 2099728765}
   - component: {fileID: 2099728764}
+  - component: {fileID: 2099728767}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -7333,6 +7323,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099728762}
   m_CullTransparentMesh: 1
+--- !u!114 &2099728767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099728762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b3c3996d1b451abd6d231985776537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GUI.Buttons.RestartButton
+  _button: {fileID: 2099728764}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

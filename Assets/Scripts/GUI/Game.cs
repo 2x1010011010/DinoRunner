@@ -16,7 +16,7 @@ namespace GUI
     [SerializeField] private ParallaxObserver _parallax;
 
     [Header("SPEED SETUP")]
-    [SerializeField] private float _startSpeed = 5f;
+    [SerializeField] private float _startSpeed = 8f;
     [SerializeField] private float _speedDelta = 1f;
     [SerializeField] private int _scoreForSpeedIncrease = 50;
 
@@ -26,7 +26,6 @@ namespace GUI
     private void Awake()
     {
       _currentSpeed = _startSpeed;
-      ApplySpeed();
 
       Time.timeScale = 0f;
       _gameUIObserver.CloseAllScreens();
@@ -63,9 +62,7 @@ namespace GUI
       _player.ResetPlayer();
       _spawner.ResetPool();
       _spawner.ResetSpawner();
-
-      _currentSpeed = _startSpeed;
-      ApplySpeed();
+      _parallax.ResetLayers();
 
       _gameUIObserver.CloseAllScreens();
       _gameUIObserver.OpenGameScreen();
@@ -129,6 +126,8 @@ namespace GUI
 
     private void RestartGame()
     {
+      _currentSpeed = _startSpeed;
+      ApplySpeed();
       StartGame();
     }
   }

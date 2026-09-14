@@ -11,17 +11,24 @@ namespace BackgroundParallax
     [SerializeField] private List<SpriteRenderer> _spriteRenderers;
     [Space(15)]
     [SerializeField] private int _sortingOrder;
-    
+
     [Header("MOVING SETUP")] 
-    [SerializeField] private float _speed;
+    [SerializeField] private float _startSpeed;
+    [SerializeField] private float _speedMultiplier;
     [SerializeField] private float _borderCoordinate;
     [SerializeField] private float _shiftDistance;
 
+    private float _speed;
     public float LayerSpeed => _speed;
     public List<SpriteRenderer> SpriteObjects => _spriteRenderers;
 
+    public void ResetSpeed()
+    {
+      _speed = _startSpeed;
+    }
+
     public void ChangeSpeed(float speed) =>
-      _speed = speed;
+      _speed = speed * _speedMultiplier;
 
     public void ChangeSprites()
     {

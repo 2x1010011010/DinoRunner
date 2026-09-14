@@ -12,7 +12,14 @@ namespace BackgroundParallax
 
     public void ChangeSpeed(float speed)
     {
-      
+      foreach (var layer in _layers)
+        layer.ChangeSpeed(speed);
+    }
+
+    public void ResetLayers()
+    {
+      foreach(var layer in _layers)
+        layer.ResetSpeed();
     }
 
     private void Update()
