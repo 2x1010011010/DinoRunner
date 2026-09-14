@@ -16,7 +16,6 @@ namespace BackgroundParallax
     [SerializeField] private float _startSpeed;
     [SerializeField] private float _speedMultiplier;
     [SerializeField] private float _borderCoordinate;
-    [SerializeField] private float _shiftDistance;
 
     private float _speed;
     public float LayerSpeed => _speed;
@@ -33,8 +32,12 @@ namespace BackgroundParallax
     public void ChangeSprites()
     {
       Debug.Log("Changing sprite position");
+
+      SpriteRenderer lastSpriteRenderer = _spriteRenderers[^1];
+      float newX = lastSpriteRenderer.transform.position.x + lastSpriteRenderer.bounds.size.x;
+
       var position = _spriteRenderers[0].transform.position;
-      _spriteRenderers[0].transform.position = new Vector3(_shiftDistance, position.y, 0);
+      _spriteRenderers[0].transform.position = new Vector3(newX - 1f, position.y, 0);
 
       var tempSpriteRenderer = _spriteRenderers[0];
       for (int i = 0; i < _spriteRenderers.Count - 1; i++)

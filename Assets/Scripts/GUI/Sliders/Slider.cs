@@ -17,7 +17,7 @@ namespace GUI.Sliders
     {
       if (VolumesAreEqual(volume)) return;
       
-      _mixerSlider.audioMixer.SetFloat(_mixerGroupName, Mathf.Lerp(_minVolume, _maxVolume, volume));
+      _mixerSlider.audioMixer.SetFloat(_mixerGroupName, Mathf.Lerp(_minVolume, _maxVolume, Mathf.Log10(volume) * 20f));
       _currentVolume = volume;
       PlayerPrefs.SetFloat(_mixerGroupName, volume);
     }

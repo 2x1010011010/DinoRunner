@@ -521,7 +521,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 20525223}
+        m_TargetAssemblyTypeName: GUI.Sliders.Slider, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &20525223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +550,7 @@ MonoBehaviour:
     type: 2}
   _minVolume: 0
   _maxVolume: 1
-  _mixerGroupName: Music
+  _mixerGroupName: Back
 --- !u!1 &26805546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,7 +1789,7 @@ MonoBehaviour:
   _parallax: {fileID: 871895548}
   _startSpeed: 5
   _speedDelta: 1
-  _scoreForSpeedIncrease: 10
+  _scoreForSpeedIncrease: 100
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2108,9 +2120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GUI.Screens.SettingsScreen
   _backButton: {fileID: 127363771}
-  _soundSlider: {fileID: 0}
-  _musicSlider: {fileID: 0}
-  _fxSlider: {fileID: 0}
+  _soundSlider: {fileID: 1147076822}
+  _musicSlider: {fileID: 20525223}
+  _fxSlider: {fileID: 1584631189}
 --- !u!1 &601236373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,35 +3392,31 @@ MonoBehaviour:
     - {fileID: 1202603351}
     - {fileID: 1532851516}
     _sortingOrder: -1
-    _speed: 5
-    _speedMultiplier: 0.3
+    _startSpeed: 4
+    _speedMultiplier: 0.8
     _borderCoordinate: -35
-    _shiftDistance: 85.04
   - _spriteRenderers:
     - {fileID: 1416101487}
     - {fileID: 1243391303}
     - {fileID: 1778483351}
     _sortingOrder: -2
-    _speed: 1.5
+    _startSpeed: 2.5
     _speedMultiplier: 0.53
     _borderCoordinate: -35
-    _shiftDistance: 84.5
   - _spriteRenderers:
     - {fileID: 1031704212}
     _sortingOrder: -3
-    _speed: 0.02
+    _startSpeed: 0.05
     _speedMultiplier: 0.013
     _borderCoordinate: -35
-    _shiftDistance: 25
   - _spriteRenderers:
     - {fileID: 1144608204}
     - {fileID: 1090915955}
     - {fileID: 742966260}
     _sortingOrder: -3
-    _speed: 5
+    _startSpeed: 5
     _speedMultiplier: 1
     _borderCoordinate: -35
-    _shiftDistance: 44
 --- !u!1 &884027473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4871,7 +4879,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1147076822}
+        m_TargetAssemblyTypeName: GUI.Sliders.Slider, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1147076822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4887,7 +4907,7 @@ MonoBehaviour:
   _mixerSlider: {fileID: 24300002, guid: f141b1ce66905894e8fd9240f6b29030, type: 2}
   _minVolume: 0
   _maxVolume: 1
-  _mixerGroupName: Sound
+  _mixerGroupName: Master
 --- !u!1 &1202603350
 GameObject:
   m_ObjectHideFlags: 0
@@ -6088,7 +6108,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1584631189}
+        m_TargetAssemblyTypeName: GUI.Sliders.Slider, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1584631189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6105,7 +6137,7 @@ MonoBehaviour:
     type: 2}
   _minVolume: 0
   _maxVolume: 1
-  _mixerGroupName: FX
+  _mixerGroupName: Player
 --- !u!1 &1756884592
 GameObject:
   m_ObjectHideFlags: 0
