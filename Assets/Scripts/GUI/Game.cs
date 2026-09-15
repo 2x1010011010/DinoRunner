@@ -41,6 +41,8 @@ namespace GUI
       _gameUIObserver.SettingsOpenRequested += OpenSettings;
       _gameUIObserver.SettingsCloseRequested += CloseSettings;
       _gameUIObserver.RestartGameRequested += RestartGame;
+      _gameUIObserver.PauseRequested += PauseGame;
+      _gameUIObserver.ResumeRequested += ResumeGame;
     }
 
     private void OnDisable()
@@ -52,6 +54,8 @@ namespace GUI
       _gameUIObserver.SettingsOpenRequested -= OpenSettings;
       _gameUIObserver.SettingsCloseRequested -= CloseSettings;
       _gameUIObserver.RestartGameRequested -= RestartGame;
+      _gameUIObserver.PauseRequested -= PauseGame;
+      _gameUIObserver.ResumeRequested -= ResumeGame;
     }
 
     private void StartGame()
@@ -110,6 +114,31 @@ namespace GUI
       _parallax.ChangeSpeed(_currentSpeed);
     }
 
+    private void RestartGame()
+    {
+      _currentSpeed = _startSpeed;
+      ApplySpeed();
+      StartGame();
+    }
+    
+    private void PauseGame()
+    {
+      if (!_isGameRunning) return;
+
+      Time.timeScale = 0f;
+
+      _gameUIObserver.CloseGameScreen();
+      _gameUIObserver.OpenPauseScreen();
+    }
+
+    private void ResumeGame()
+    {
+      Time.timeScale = 1f;
+
+      _gameUIObserver.ClosePauseScreen();
+      _gameUIObserver.OpenGameScreen();
+    }
+    
     private void OpenSettings()
     {
       Time.timeScale = 0f;
@@ -121,14 +150,11 @@ namespace GUI
     private void CloseSettings()
     {
       _gameUIObserver.CloseAllScreens();
-      _gameUIObserver.OpenStartScreen();
-    }
 
-    private void RestartGame()
-    {
-      _currentSpeed = _startSpeed;
-      ApplySpeed();
-      StartGame();
+      if (_isGameRunning)
+        _gameUIObserver.OpenPauseScreen();
+      else
+        _gameUIObserver.OpenStartScreen();
     }
   }
 }

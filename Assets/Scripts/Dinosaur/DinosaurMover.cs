@@ -1,5 +1,5 @@
-﻿using GUI;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Dinosaur
 {
@@ -11,7 +11,7 @@ namespace Dinosaur
     [SerializeField] private AudioSource _jumpSoundEffect;
 
     private Rigidbody2D _rigidbody;
-    
+
     private void Start()
     {
       _rigidbody = GetComponent<Rigidbody2D>();
@@ -21,15 +21,15 @@ namespace Dinosaur
 
     private void Update()
     {
-      if (Mathf.Approximately(Time.timeScale, 1) && _rigidbody.linearVelocity.y == 0)
+      if (!Mathf.Approximately(Time.timeScale, 0) || _rigidbody.linearVelocity.y != 0) return;
+
+      if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonDown(0) && !IsPointerOverUI()))
       {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        {
-          ResetDinosaurMove();
-          _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
-          _jumpSoundEffect.Play();
-        }
+        ResetDinosaurMove();
+        _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
+        _jumpSoundEffect.Play();
       }
+
 
       if (_rigidbody.linearVelocity.y != 0)
       {
@@ -44,6 +44,11 @@ namespace Dinosaur
     public void ResetDinosaurMove()
     {
       _rigidbody.linearVelocity = Vector2.zero;
+    }
+
+    private bool IsPointerOverUI()
+    {
+      return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     }
   }
 }

@@ -12,17 +12,21 @@ namespace GUI
     [SerializeField] private EndScreen _endScreen;
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private SettingsScreen _settingsScreen;
+    [SerializeField] private PauseScreen _pauseScreen;
 
     [Header("SCREENS OBJECTS")]
     [SerializeField] private GameObject _gameScreenObject;
     [SerializeField] private GameObject _endScreenObject;
     [SerializeField] private GameObject _startScreenObject;
     [SerializeField] private GameObject _settingsScreenObject;
+    [SerializeField] private GameObject _pauseScreenObject;
 
     public event Action StartGameRequested;
     public event Action SettingsOpenRequested;
     public event Action SettingsCloseRequested;
     public event Action RestartGameRequested;
+    public event Action PauseRequested;
+    public event Action ResumeRequested;
 
     public void OpenStartScreen()
     {
@@ -58,18 +62,6 @@ namespace GUI
       _settingsScreenObject.SetActive(false);
     }
 
-    public void OpenGameScreen()
-    {
-      _gameScreenObject.SetActive(true);
-      _gameScreen.Open();
-    }
-
-    public void CloseGameScreen()
-    {
-      _gameScreen.Close();
-      _gameScreenObject.SetActive(false);
-    }
-
     public void OpenEndScreen()
     {
       _endScreenObject.SetActive(true);
@@ -85,17 +77,51 @@ namespace GUI
       _endScreenObject.SetActive(false);
     }
 
+    public void SetScore(int score)
+    {
+      _gameScreen.SetScore(score);
+    }
+    
+    public void OpenGameScreen()
+    {
+      _gameScreenObject.SetActive(true);
+      _gameScreen.Open();
+      _gameScreen.OnPauseRequested += OnPauseRequested;
+    }
+
+    public void CloseGameScreen()
+    {
+      _gameScreen.OnPauseRequested -= OnPauseRequested;
+
+      _gameScreen.Close();
+      _gameScreenObject.SetActive(false);
+    }
+
+    public void OpenPauseScreen()
+    {
+      _pauseScreenObject.SetActive(true);
+      _pauseScreen.Open();
+
+      _pauseScreen.OnResume += OnResumeRequested;
+      _pauseScreen.OnSettingsShow += OnSettingsOpenRequested;
+    }
+
+    public void ClosePauseScreen()
+    {
+      _pauseScreen.OnResume -= OnResumeRequested;
+      _pauseScreen.OnSettingsShow -= OnSettingsOpenRequested;
+
+      _pauseScreen.Close();
+      _pauseScreenObject.SetActive(false);
+    }
+
     public void CloseAllScreens()
     {
       CloseStartScreen();
       CloseSettingsScreen();
       CloseGameScreen();
       CloseEndScreen();
-    }
-
-    public void SetScore(int score)
-    {
-      _gameScreen.SetScore(score);
+      ClosePauseScreen();
     }
 
     private void OnStartRequested() =>
@@ -109,5 +135,11 @@ namespace GUI
 
     private void OnRestartRequested() =>
       RestartGameRequested?.Invoke();
+    
+    private void OnPauseRequested() =>
+      PauseRequested?.Invoke();
+
+    private void OnResumeRequested() =>
+      ResumeRequested?.Invoke();
   }
 }
