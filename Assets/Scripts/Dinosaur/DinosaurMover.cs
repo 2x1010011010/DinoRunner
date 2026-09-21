@@ -21,16 +21,6 @@ namespace Dinosaur
 
     private void Update()
     {
-      if (!Mathf.Approximately(Time.timeScale, 0) || _rigidbody.linearVelocity.y != 0) return;
-
-      if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonDown(0) && !IsPointerOverUI()))
-      {
-        ResetDinosaurMove();
-        _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
-        _jumpSoundEffect.Play();
-      }
-
-
       if (_rigidbody.linearVelocity.y != 0)
       {
         _animation.PlayJumpAnimation();
@@ -39,6 +29,30 @@ namespace Dinosaur
       {
         _animation.PlayRunAnimation();
       }
+
+      if (Mathf.Approximately(Time.timeScale, 0))
+        return;
+
+      if (Input.GetKeyDown(KeyCode.Space))
+      {
+        Jump();
+        return;
+      }
+
+      if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
+      {
+        Jump();
+      }
+    }
+
+    private void Jump()
+    {
+      if (_rigidbody.linearVelocity.y != 0)
+        return;
+      
+      ResetDinosaurMove();
+      _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
+      _jumpSoundEffect.Play();
     }
 
     public void ResetDinosaurMove()
@@ -48,7 +62,18 @@ namespace Dinosaur
 
     private bool IsPointerOverUI()
     {
-      return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+      if (EventSystem.current == null)
+        return false;
+
+      var pointerEventData = new PointerEventData(EventSystem.current)
+      {
+        position = Input.mousePosition
+      };
+
+      var results = new System.Collections.Generic.List<RaycastResult>();
+      EventSystem.current.RaycastAll(pointerEventData, results);
+
+      return results.Count > 0;
     }
   }
 }

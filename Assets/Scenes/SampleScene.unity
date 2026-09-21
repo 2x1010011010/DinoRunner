@@ -1923,8 +1923,8 @@ MonoBehaviour:
   _spawner: {fileID: 720049568}
   _parallax: {fileID: 871895548}
   _startSpeed: 5
-  _speedDelta: 1
-  _scoreForSpeedIncrease: 100
+  _speedDelta: 0.25
+  _scoreForSpeedIncrease: 25
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
