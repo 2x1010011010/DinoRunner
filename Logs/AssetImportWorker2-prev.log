@@ -1,21 +1,21 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/staging' branch; Version is '6000.3.9f1 (7a9955a4f2fa) revision 8034645'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Professional' Language: 'en' Physical Memory: 32472 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user" at "2026-09-22T13:55:48.7181758Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user" at "2026-09-20T23:14:54.1788267Z"
 Process architecture: x64
-Date: 2026-09-20T23:14:54Z
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 4484, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+Date: 2026-09-22T13:55:48Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 7708, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              54f8f0e6f49147bebe688e0986b4c10e
-  Correlation Id:          c047caeb318afaa324d5a9e2c705c25c
-  External correlation Id: 125862448289252687
+  Session Id:              7696af0d29ca410ba0ec8fcbdff4662d
+  Correlation Id:          cc36b0ac670a533b53f59b31f6975175
+  External correlation Id: 4208082468127140249
   Machine Id:              VGd80PZ9QyCw0HDVca4dGQUCKdA=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-user" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user-notifications" at "2026-09-20T23:14:54.2346474Z"
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-user" (connect: 0.00s, validation: 0.00s, handshake: 0.06s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-user-notifications" at "2026-09-22T13:55:48.7770555Z"
 [Licensing::Module] Licensing Background thread has ended after 0.06s
 
 COMMAND LINE ARGUMENTS:
@@ -30,7 +30,7 @@ D:/UnityProjects/DinoRunner
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-61962
+59530
 -licensingIpc
 LicenseClient-user
 -job-worker-count
@@ -78,12 +78,12 @@ D:/UnityProjects/DinoRunner
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [2060]  Target information:
+Player connection [12904]  Target information:
 
-Player connection [2060]  * "[IP] 192.168.1.102 [Port] 0 [Flags] 2 [Guid] 644676384 [EditorId] 644676384 [Version] 1048832 [Id] WindowsEditor(7,fa1010011010LT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [12904]  * "[IP] 192.168.1.102 [Port] 0 [Flags] 2 [Guid] 2485239176 [EditorId] 2485239176 [Version] 1048832 [Id] WindowsEditor(7,fa1010011010LT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [2060] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [2060] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [12904] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [12904] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -99,7 +99,7 @@ Active build profile path: `Assets/Settings/Build Profiles/Web.asset`
 Got setting from build profile YAML, name `Color Space`, value `0`
 Got setting from build profile YAML, name `m_BuildTarget`, value `20`
 Got setting from build profile YAML, name `m_Subtarget`, value `0`
-Refreshing native plugins compatible for Editor in 1.37 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 12.36 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.9f1 (7a9955a4f2fa)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -232,7 +232,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56708
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56104
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
@@ -249,13 +249,13 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/E
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 [Licensing::Client] Successfully resolved entitlement details
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.014044 seconds.
-- Loaded All Assemblies, in  0.538 seconds
+Registered in 0.013597 seconds.
+- Loaded All Assemblies, in  0.495 seconds
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 298 ms
+Android Extension - Scanning For ADB Devices 288 ms
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
@@ -328,35 +328,35 @@ Got setting from build profile YAML, name `Color Space`, value `0`
 Got setting from build profile YAML, name `Color Space`, value `0`
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.973 seconds
-Domain Reload Profiling: 1506ms
-	BeginReloadAssembly (132ms)
+- Finished resetting the current domain, in  0.925 seconds
+Domain Reload Profiling: 1418ms
+	BeginReloadAssembly (117ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (53ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (253ms)
-		LoadAssemblies (133ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (78ms)
+	LoadAllAssembliesAndSetupDomain (227ms)
+		LoadAssemblies (114ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (243ms)
-			TypeCache.Refresh (240ms)
-				TypeCache.ScanAssembly (220ms)
+		AnalyzeDomain (221ms)
+			TypeCache.Refresh (219ms)
+				TypeCache.ScanAssembly (202ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (973ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (925ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (927ms)
+		SetupLoadedEditorAssemblies (882ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (453ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (155ms)
-			ProcessInitializeOnLoadAttributes (213ms)
-			ProcessInitializeOnLoadMethodAttributes (97ms)
+			InitializePlatformSupportModulesInManaged (442ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (200ms)
+			ProcessInitializeOnLoadMethodAttributes (93ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -369,9 +369,9 @@ Got setting from build profile YAML, name `m_Development`, value `0`
 [Licensing::Client] Successfully resolved entitlement details
 Got setting from build profile YAML, name `Color Space`, value `0`
 Got setting from build profile YAML, name `Color Space`, value `0`
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-- Loaded All Assemblies, in  1.053 seconds
-Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+- Loaded All Assemblies, in  1.020 seconds
+Refreshing native plugins compatible for Editor in 1.58 ms, found 5 plugins.
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for UWP target not found
@@ -384,105 +384,339 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.975 seconds
-Domain Reload Profiling: 2025ms
-	BeginReloadAssembly (430ms)
+- Finished resetting the current domain, in  1.129 seconds
+Domain Reload Profiling: 2147ms
+	BeginReloadAssembly (378ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (194ms)
+		DisableScriptedObjects (123ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (48ms)
-	RebuildCommonClasses (46ms)
-	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (510ms)
-		LoadAssemblies (398ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (52ms)
+	LoadAllAssembliesAndSetupDomain (518ms)
+		LoadAssemblies (435ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (202ms)
-			TypeCache.Refresh (167ms)
-				TypeCache.ScanAssembly (151ms)
-			BuildScriptInfoCaches (28ms)
+		AnalyzeDomain (171ms)
+			TypeCache.Refresh (136ms)
+				TypeCache.ScanAssembly (115ms)
+			BuildScriptInfoCaches (30ms)
 			ResolveRequiredComponents (3ms)
-	FinalizeReload (975ms)
+	FinalizeReload (1129ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (815ms)
+		SetupLoadedEditorAssemblies (926ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (19ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (217ms)
-			ProcessInitializeOnLoadAttributes (475ms)
-			ProcessInitializeOnLoadMethodAttributes (92ms)
-			AfterProcessingInitializeOnLoad (6ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (34ms)
-Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2945 unused Assets / (1.0 MB). Loaded Objects now: 3582.
-Memory consumption went from 93.3 MB to 92.3 MB.
-Total: 8.138100 ms (FindLiveObjects: 0.494900 ms CreateObjectMapping: 0.244500 ms MarkObjects: 6.524600 ms  DeleteObjects: 0.872900 ms)
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.934 seconds
-Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
-Native extension for iOS target not found
-Native extension for Android target not found
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.076 seconds
-Domain Reload Profiling: 2008ms
-	BeginReloadAssembly (372ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (159ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (61ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (447ms)
-		LoadAssemblies (385ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (156ms)
-			TypeCache.Refresh (8ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (137ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (1077ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (877ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
+			InitializePlatformSupportModulesInManaged (27ms)
 			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (245ms)
-			ProcessInitializeOnLoadAttributes (503ms)
-			ProcessInitializeOnLoadMethodAttributes (98ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			BeforeProcessingInitializeOnLoad (208ms)
+			ProcessInitializeOnLoadAttributes (545ms)
+			ProcessInitializeOnLoadMethodAttributes (130ms)
+			AfterProcessingInitializeOnLoad (9ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (32ms)
-Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (34ms)
+Refreshing native plugins compatible for Editor in 6.96 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2941 unused Assets / (0.9 MB). Loaded Objects now: 3586.
-Memory consumption went from 93.1 MB to 92.2 MB.
-Total: 7.674300 ms (FindLiveObjects: 0.363000 ms CreateObjectMapping: 0.233100 ms MarkObjects: 6.266100 ms  DeleteObjects: 0.810800 ms)
+Unloading 3014 unused Assets / (1.0 MB). Loaded Objects now: 3640.
+Memory consumption went from 93.4 MB to 92.4 MB.
+Total: 23.526300 ms (FindLiveObjects: 1.015300 ms CreateObjectMapping: 0.713700 ms MarkObjects: 17.570700 ms  DeleteObjects: 4.223900 ms)
 
-Prepare: number of updated asset objects reloaded= 0
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+========================================================================
+Received Import Request.
+  Time since last request: 229235.943559 seconds.
+  path: Assets/MaxSdk/Mediation
+  artifactKey: Guid(dcf2020c4018447c9b91170c0f62d799) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Mediation using Guid(dcf2020c4018447c9b91170c0f62d799) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5986bbbe4f7e48af1bad86c7ee8d31ba') in 0.1513996 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessAndroid.cs
+  artifactKey: Guid(c01ea79d0cb2a43c093e2fd07201df9e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessAndroid.cs using Guid(c01ea79d0cb2a43c093e2fd07201df9e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74f9159bb9713485816d24ac9997eecc') in 0.0972264 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/MaxSdk/Scripts/MaxEvents.cs
+  artifactKey: Guid(67ec2f620c6b0405ba16ea2c032dc9a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/MaxEvents.cs using Guid(67ec2f620c6b0405ba16ea2c032dc9a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '91428d2d1b8d94f6439d68ca27c29d3e') in 0.0220333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/MaxSdk/Scripts/MaxEventExecutor.cs
+  artifactKey: Guid(4715dd62632564dc4810a4dc98243f4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/MaxEventExecutor.cs using Guid(4715dd62632564dc4810a4dc98243f4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '90e6d0101a532d31351d1a47a7ed4816') in 0.0215256 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/MaxSdk/Mediation/Google/Editor
+  artifactKey: Guid(e8015bd045cea462c8f39c8a05867d08) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Mediation/Google/Editor using Guid(e8015bd045cea462c8f39c8a05867d08) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6d719786315284dc767c5f3cbf2aa921') in 0.0179083 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/MaxSdk/Resources
+  artifactKey: Guid(30c96cb5d1bd049759b48849439c0f76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Resources using Guid(30c96cb5d1bd049759b48849439c0f76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7acbee1951549b0a83e7f5b8eb65d5e3') in 0.0124939 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinSettings.cs
+  artifactKey: Guid(ebc0ba1b5ef6b4a6b9dd53d7eadfea16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinSettings.cs using Guid(ebc0ba1b5ef6b4a6b9dd53d7eadfea16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '504c362b214bd4ec53c36be6d9a065d5') in 0.0130642 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/MaxSdk/AppLovin/Editor
+  artifactKey: Guid(f2b8a6c8912fb4f4880abf0ae1cf8a67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/AppLovin/Editor using Guid(f2b8a6c8912fb4f4880abf0ae1cf8a67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '665750df3140c87f9b4311b3e26736be') in 0.0148079 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor/MaxSdk.IntegrationManager.Editor.asmdef
+  artifactKey: Guid(a10a05a8449c42519fd80f2b8b580de3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor/MaxSdk.IntegrationManager.Editor.asmdef using Guid(a10a05a8449c42519fd80f2b8b580de3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a6bdab6dda5c17341c562a745f7f5a59') in 0.0275977 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/MaxSdk/AppLovin/Plugins/Android
+  artifactKey: Guid(6f0aafc7eb14c4bfba37d054418cf99e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/AppLovin/Plugins/Android using Guid(6f0aafc7eb14c4bfba37d054418cf99e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6f308f531b6e3f052784be3bf8f48d84') in 0.0158593 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/Firebase/m2repository
+  artifactKey: Guid(0456b60eac8e4ef4cb87e91c48d139af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/m2repository using Guid(0456b60eac8e4ef4cb87e91c48d139af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c19d154caca0b707a53ea2d0d7a39fe8') in 0.0138345 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.bundle
+  artifactKey: Guid(35bfcced25264151bd76b628a1dfa989) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.bundle using Guid(35bfcced25264151bd76b628a1dfa989) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1a1666e440635795f2ae95281157d37f') in 0.0467251 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/MaxSdk/Mediation/Google
+  artifactKey: Guid(94394ec862bf240b7b7ecfff0c353dbd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Mediation/Google using Guid(94394ec862bf240b7b7ecfff0c353dbd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '14f33dbcfe360cf0fdfd9afa8330fdf7') in 0.0145752 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinMenuItems.cs
+  artifactKey: Guid(02c2d277874f649d18a59d382420bf65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinMenuItems.cs using Guid(02c2d277874f649d18a59d382420bf65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e6de18df80f0e85a38aa978ff8e98e8f') in 0.0142237 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Firebase/Plugins/iOS/Firebase.Analytics.pdb
+  artifactKey: Guid(e0a3fec4e6044b70added51eb3d310ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/iOS/Firebase.Analytics.pdb using Guid(e0a3fec4e6044b70added51eb3d310ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'caedcd463ab98b04a450c5110cdc6d28') in 0.0179066 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000129 seconds.
+  path: Assets/Editor Default Resources/Firebase/firebase_lockup_dark.png
+  artifactKey: Guid(b93330fc8ea08407dbc514b5101afa14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Editor Default Resources/Firebase/firebase_lockup_dark.png using Guid(b93330fc8ea08407dbc514b5101afa14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '630d5b206622f32d1c2a26aa465e9be7') in 0.1155812 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcess.cs
+  artifactKey: Guid(0e6254f24e89548b3a7644fa7bf25f9d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcess.cs using Guid(0e6254f24e89548b3a7644fa7bf25f9d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bbde0f0a9c956b578cd2e52ff983a67a') in 0.0137121 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000099 seconds.
+  path: Assets/MaxSdk/Scripts/MaxSdkUtils.cs
+  artifactKey: Guid(47f1bc9a8eebd4d088e22e6baf00ede3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/MaxSdkUtils.cs using Guid(47f1bc9a8eebd4d088e22e6baf00ede3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3ec7b39961f673a88bfcf097478079ac') in 0.0163165 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/MaxSdk/Scripts/MaxSdkLogger.cs
+  artifactKey: Guid(ff2b160afdfd4a74b731954323772a90) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/MaxSdkLogger.cs using Guid(ff2b160afdfd4a74b731954323772a90) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0715590e4d443bb2e17f1a778cd9a9a5') in 0.0133817 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityAdManager.h
+  artifactKey: Guid(4209563f82b8a4f7dabf03705ab761c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityAdManager.h using Guid(4209563f82b8a4f7dabf03705ab761c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fce5d814eb388484963b487508983c06') in 0.0209773 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/MaxSdk/Prefabs/BannerTop.prefab
+  artifactKey: Guid(6521750c87fd14f709d09a1e38ffde47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Prefabs/BannerTop.prefab using Guid(6521750c87fd14f709d09a1e38ffde47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3d2ffecb64febd5d38b18a66ef230e49') in 0.1303969 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 23
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinAutoUpdater.cs
+  artifactKey: Guid(8bcdd5226273242c5bd9ec79568202e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinAutoUpdater.cs using Guid(8bcdd5226273242c5bd9ec79568202e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '19eafbc46814fc636ec64e8e15e12932') in 0.0155602 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor
+  artifactKey: Guid(0da229e279400497786c39933fe02e52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor using Guid(0da229e279400497786c39933fe02e52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9dc5baea9e5fc41a3a9215fb02f8eabc') in 0.01453 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Assets/MaxSdk/Prefabs/Rewarded.prefab
+  artifactKey: Guid(a28c1544d6f094d5eafc8da2343c9119) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Prefabs/Rewarded.prefab using Guid(a28c1544d6f094d5eafc8da2343c9119) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'abd36221f6dfb8b04dd5963d23dcbaa2') in 0.082545 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Firebase/Plugins/Firebase.Platform.dll
+  artifactKey: Guid(7d3eec03d7e241a48941e038118c5e6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/Firebase.Platform.dll using Guid(7d3eec03d7e241a48941e038118c5e6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3a232b67dc7e88e2c991267b6a889941') in 0.0203393 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000673 seconds.
+  path: Assets/Firebase/Editor/generate_xml_from_google_services_json.exe
+  artifactKey: Guid(ae88c0972b7448b5b36def1716f1d711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Editor/generate_xml_from_google_services_json.exe using Guid(ae88c0972b7448b5b36def1716f1d711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '17c50ee1714b92dd339004cbc806936b') in 0.0158473 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000116 seconds.
+  path: Assets/Firebase/Plugins/Firebase.App.pdb
+  artifactKey: Guid(44907853a9e64be4a31076a763ae13b3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/Firebase.App.pdb using Guid(44907853a9e64be4a31076a763ae13b3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fd866e0ceff75cc3eb05e28410a0734b') in 0.0129871 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Firebase/Plugins/Google.MiniJson.dll
+  artifactKey: Guid(3ebb289656f1477fa263e62d36c6e329) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/Google.MiniJson.dll using Guid(3ebb289656f1477fa263e62d36c6e329) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cb71680e861fd757db35f31f10e73e87') in 0.0185208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/Editor Default Resources/Firebase/fb_cloud_messaging_dark.png
+  artifactKey: Guid(20c5b8a1f82cb4aadb77ca20683d2a6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Editor Default Resources/Firebase/fb_cloud_messaging_dark.png using Guid(20c5b8a1f82cb4aadb77ca20683d2a6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '81fce135fbd875da2c7739507b711113') in 0.0349653 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'be559f2af1e5f2c9dccd54df6cbd0dcc') in 0.0350002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/Firebase/Editor
+  artifactKey: Guid(5e2fe75e46ec243429aebadcb80292d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Editor using Guid(5e2fe75e46ec243429aebadcb80292d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '52610bf7fdfcff139fb57d70c7b66fa9') in 0.0145426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Firebase/Plugins/Firebase.Analytics.dll
+  artifactKey: Guid(816270c2a2a348e59cb9b7b096a24f50) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/Firebase.Analytics.dll using Guid(816270c2a2a348e59cb9b7b096a24f50) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e3bd73da3bec0d5e34f428ec4a47378d') in 0.0157968 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/Firebase/Plugins/Firebase.Analytics.pdb
+  artifactKey: Guid(778e0739eb634ac6beb8b1dbac5d17f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/Firebase.Analytics.pdb using Guid(778e0739eb634ac6beb8b1dbac5d17f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c870f98c7b576f84715ba0076d307a90') in 0.014862 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/MaxSdk/Scripts/MaxWebRequest.cs
+  artifactKey: Guid(9f1b03fdc97184fb98b605fe27346916) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/MaxWebRequest.cs using Guid(9f1b03fdc97184fb98b605fe27346916) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9335676aace0f2f25450b2e40f091447') in 0.0135804 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/MaxSdk/Scripts/MaxSdkAndroid.cs
+  artifactKey: Guid(10335fad6bfef47b8819a411aa591dc8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/MaxSdkAndroid.cs using Guid(10335fad6bfef47b8819a411aa591dc8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '49471c024e93f1ee431e941283aedbd9') in 0.0159154 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000121 seconds.
+  path: Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinEditorCoroutine.cs
+  artifactKey: Guid(95747c688378548eeb92aeb528ac96ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinEditorCoroutine.cs using Guid(95747c688378548eeb92aeb528ac96ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bead1bd146db67b32a06e0f4aca37c5f') in 0.0133207 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Firebase/Plugins/iOS
+  artifactKey: Guid(37e3816ac86fc9844aaa46abe30bd586) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Firebase/Plugins/iOS using Guid(37e3816ac86fc9844aaa46abe30bd586) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '474d5abc222ac99e904a732ea87fa120') in 0.0099159 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+

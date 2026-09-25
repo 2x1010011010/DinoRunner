@@ -27,6 +27,8 @@ namespace GUI
     public event Action RestartGameRequested;
     public event Action PauseRequested;
     public event Action ResumeRequested;
+    public event Action GameScreenOpened;
+    public event Action GameScreenClosed;
 
     public void OpenStartScreen()
     {
@@ -87,6 +89,8 @@ namespace GUI
       _gameScreenObject.SetActive(true);
       _gameScreen.Open();
       _gameScreen.OnPauseRequested += OnPauseRequested;
+
+      GameScreenOpened?.Invoke();
     }
 
     public void CloseGameScreen()
@@ -95,6 +99,8 @@ namespace GUI
 
       _gameScreen.Close();
       _gameScreenObject.SetActive(false);
+
+      GameScreenClosed?.Invoke();
     }
 
     public void OpenPauseScreen()
