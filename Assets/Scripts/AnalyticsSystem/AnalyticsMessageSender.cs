@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AnalyticsSystem
 {
-  public class AnalyticsMessageSender : MonoBehaviour
+  public class AnalyticsMessageSender
   {
     
   }
