@@ -1,3 +1,4 @@
+using AnalyticsSystem;
 using GUI;
 using UnityEngine;
 
@@ -26,6 +27,7 @@ namespace AdvertisingSystem
       MaxSdkCallbacks.Interstitial.OnAdLoadFailedEvent += OnInterstitialLoadFailed;
       MaxSdkCallbacks.Interstitial.OnAdDisplayFailedEvent += OnInterstitialDisplayFailed;
       MaxSdkCallbacks.Interstitial.OnAdHiddenEvent += OnInterstitialHidden;
+      MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent += OnInterstitialDisplayed;
 
       MaxSdk.InitializeSdk();
     }
@@ -38,6 +40,7 @@ namespace AdvertisingSystem
       MaxSdkCallbacks.Interstitial.OnAdLoadFailedEvent -= OnInterstitialLoadFailed;
       MaxSdkCallbacks.Interstitial.OnAdDisplayFailedEvent -= OnInterstitialDisplayFailed;
       MaxSdkCallbacks.Interstitial.OnAdHiddenEvent -= OnInterstitialHidden;
+      MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent -= OnInterstitialDisplayed;
     }
 
     private void OnEnable()
@@ -125,6 +128,11 @@ namespace AdvertisingSystem
     private void OnInterstitialHidden(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
       LoadInterstitial();
+    }
+    
+    private void OnInterstitialDisplayed(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    {
+      AnalyticsMessageSender.LogInterstitialShown(adUnitId);
     }
   }
 }

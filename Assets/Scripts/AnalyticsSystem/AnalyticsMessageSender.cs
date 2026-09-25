@@ -1,22 +1,16 @@
 using System;
 using System.Collections.Generic;
-using AdvertisingSystem;
 using Firebase;
 using Firebase.Analytics;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace AnalyticsSystem
 {
   public static class AnalyticsMessageSender
   {
-    static DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
-    private static bool firebaseInitialized = false;
-    private static string logText = "";
-    private const int kMaxLogSize = 16382;
-    private static Advertising _advertising;
-    private static int _levelNumber;
-    private static int _levelCount;
+    private const string _firstOpenKey = "HasOpenedBefore";
+
+    private static bool _firebaseInitialized;
 
     public static void Initialize()
     {
@@ -24,188 +18,76 @@ namespace AnalyticsSystem
       {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
-          var dependencyStatus = task.Result;
-          if (dependencyStatus == DependencyStatus.Available)
-          {
+          if (task.Result == DependencyStatus.Available)
             InitializeFirebase();
-          }
           else
-          {
-            Debug.LogError(String.Format(
-              "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-          }
+            Debug.LogError($"Could not resolve all Firebase dependencies: {task.Result}");
         });
       }
       catch (Exception e)
       {
-        Debug.Log("Exception: " + e);
+        Debug.LogError("Firebase initialization exception: " + e);
       }
     }
 
     private static void InitializeFirebase()
     {
-      DebugLog("Enabling data collection.", true);
       FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+      _firebaseInitialized = true;
 
-      DebugLog("Set user properties.", true);
-
-      FirebaseAnalytics.SetUserProperty(
-        FirebaseAnalytics.UserPropertySignUpMethod,
-        "Google");
-
-      FirebaseAnalytics.SetSessionTimeoutDuration(new TimeSpan(0, 30, 0));
-      firebaseInitialized = true;
+      LogFirstOpenIfNeeded();
     }
 
-    private static void DebugLog(string eventName, bool isLogActive)
+    private static void LogFirstOpenIfNeeded()
     {
-      if (isLogActive)
+      if (PlayerPrefs.GetInt(_firstOpenKey, 0) == 1) return;
+
+      SendEvent("first_open", null);
+
+      PlayerPrefs.SetInt(_firstOpenKey, 1);
+      PlayerPrefs.Save();
+    }
+
+    public static void LogSessionLength(float seconds)
+    {
+      SendEvent("session_length", new Dictionary<string, object>
       {
-        Debug.Log("FIREBASE SEND EVENT" + eventName);
-        logText += eventName + "\n";
-
-        while (logText.Length > kMaxLogSize)
-        {
-          int index = logText.IndexOf("\n");
-          logText = logText.Substring(index + 1);
-        }
-      }
+        { "length_seconds", seconds }
+      });
     }
 
-    public static void SendAnalitycsData(string eventName, Dictionary<string, object> data, bool isLogActive)
+    public static void LogInterstitialShown(string adUnitId)
     {
-      List<Parameter> parameters = new List<Parameter>();
+      SendEvent("interstitial_shown", new Dictionary<string, object>
+      {
+        { "ad_unit_id", adUnitId }
+      });
+    }
 
+    private static void SendEvent(string eventName, Dictionary<string, object> data)
+    {
+      if (!_firebaseInitialized) return;
+
+      if (data == null)
+      {
+        FirebaseAnalytics.LogEvent(eventName);
+        return;
+      }
+
+      var parameters = new List<Parameter>();
       foreach (var item in data)
       {
-        if (item.Value is int)
+        switch (item.Value)
         {
-          parameters.Add(new Parameter(item.Key, (int)item.Value));
-        }
-        else if (item.Value is long)
-        {
-          parameters.Add(new Parameter(item.Key, (long)item.Value));
-        }
-        else if (item.Value is double)
-        {
-          parameters.Add(new Parameter(item.Key, (double)item.Value));
-        }
-        else if (item.Value is float)
-        {
-          parameters.Add(new Parameter(item.Key, (float)item.Value));
-        }
-        else if (item.Value is string)
-        {
-          parameters.Add(new Parameter(item.Key, (string)item.Value));
+          case int i: parameters.Add(new Parameter(item.Key, i)); break;
+          case long l: parameters.Add(new Parameter(item.Key, l)); break;
+          case double d: parameters.Add(new Parameter(item.Key, d)); break;
+          case float f: parameters.Add(new Parameter(item.Key, f)); break;
+          case string s: parameters.Add(new Parameter(item.Key, s)); break;
         }
       }
 
       FirebaseAnalytics.LogEvent(eventName, parameters.ToArray());
-
-      if (isLogActive)
-      {
-        Debug.Log("FIREBASE SEND EVENT: " + eventName + "; PARAMS:");
-        foreach (var item in data)
-          Debug.Log(item.Key + " " + item.Value);
-      }
-    }
-
-    public static void LevelStart([CanBeNull] string levelName, bool isLogActive)
-    {
-      if (_levelNumber != 0)
-      {
-        _levelNumber++;
-      }
-      else
-      {
-        _levelNumber = 1;
-      }
-
-
-      if (PlayerPrefs.HasKey("LevelCount"))
-      {
-        _levelCount = PlayerPrefs.GetInt("LevelCount");
-        _levelCount++;
-      }
-      else
-      {
-        _levelCount = 1;
-      }
-
-      Dictionary<string, object> data = new Dictionary<string, object>
-      {
-        { "level_number", _levelNumber },
-        { "level_name", levelName },
-        { "level_count", _levelCount },
-      };
-
-      SendAnalitycsData("level_start", data, isLogActive);
-      PlayerPrefs.SetInt("LevelCount", _levelCount);
-      PlayerPrefs.SetString("LevelName", levelName);
-    }
-
-    public static void LevelEnd(bool isLogActive)
-    {
-      string levelName = PlayerPrefs.GetString("LevelName");
-      Dictionary<string, object> data = new Dictionary<string, object>
-      {
-        { "level_number", _levelNumber },
-        { "level_name", levelName },
-        { "level_count", _levelCount },
-      };
-
-      SendAnalitycsData("level_finish", data, isLogActive);
-    }
-    
-
-    public static void VideoAdsAvailable(bool isLogActive)
-    {
-      Dictionary<string, object> data = new Dictionary<string, object>
-      {
-        { "ad_type", "interstitial" },
-        { "placement", "ad_on_replay" },
-        {
-          "result",
-          Application.internetReachability == NetworkReachability.NotReachable ? "not_available" : "success"
-        },
-        { "connection", Application.internetReachability == NetworkReachability.NotReachable ? 0 : 1 }
-      };
-
-      if (_advertising.IsInterstitialReady)
-      {
-          SendAnalitycsData("video_ads_available", data, isLogActive);
-      }
-    }
-
-    public static void VideoAdsStarted(bool isLogActive)
-    {
-      Dictionary<string, object> data = new Dictionary<string, object>
-      {
-        { "ad_type", "interstitial" },
-        { "placement", "ad_on_replay" },
-        { "result", "started" },
-        { "connection", Application.internetReachability == NetworkReachability.NotReachable ? 0 : 1 }
-      };
-
-      if (Application.internetReachability != NetworkReachability.NotReachable)
-        SendAnalitycsData("video_ads_started", data, isLogActive);
-    }
-
-    public static void VideoAdsWatch(bool isLogActive)
-    {
-      Dictionary<string, object> data = new Dictionary<string, object>
-      {
-        { "ad_type", "interstitial" },
-        { "placement", "ad_on_replay" },
-        {
-          "result",
-          Application.internetReachability == NetworkReachability.NotReachable ? "not_available" : "watched"
-        },
-        { "connection", Application.internetReachability == NetworkReachability.NotReachable ? 0 : 1 }
-      };
-
-      if (Application.internetReachability != NetworkReachability.NotReachable)
-        SendAnalitycsData("video_ads_watch", data, isLogActive);
     }
   }
 }
